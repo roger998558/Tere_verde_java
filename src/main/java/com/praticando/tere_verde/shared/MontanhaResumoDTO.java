@@ -1,7 +1,8 @@
 package com.praticando.tere_verde.shared;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.praticando.tere_verde.model.Montanha;
-
+@JsonPropertyOrder ({"nome" , "descricao", "dificuldade"} )
 public class MontanhaResumoDTO {
 
     private  String nome;

@@ -1,7 +1,9 @@
 package com.praticando.tere_verde.shared;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.praticando.tere_verde.model.Evento;
 
+@JsonPropertyOrder({"nome", "dataInicio", "dataFim", "montanha"})
 public class EventoResponseDTO {
 
 
@@ -14,7 +16,9 @@ public class EventoResponseDTO {
         this.nome = evento.getNome();
         this.dataInicio = evento.getDataInicio();
         this.dataFim = evento.getDataFim();
+        if (evento.getMontanha() != null) {
         this.montanha = new MontanhaResumoDTO(evento.getMontanha());
+        }
     }
 
 
