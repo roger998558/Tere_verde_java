@@ -15,7 +15,6 @@ public class Evento {
     @Id 
     @GeneratedValue (strategy = GenerationType.UUID)
     private String id;
-
     private String nome;
     private String dataInicio;
     private String dataFim;
@@ -67,6 +66,13 @@ public class Evento {
     }
     public void setMontanha(Montanha montanha) {
         this.montanha = montanha;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
 }

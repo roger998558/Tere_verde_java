@@ -3,16 +3,17 @@ package com.praticando.tere_verde.shared;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.praticando.tere_verde.model.Evento;
 
-@JsonPropertyOrder({"nome", "dataInicio", "dataFim", "montanha"})
+@JsonPropertyOrder({"id","nome", "dataInicio", "dataFim", "montanha"})
 public class EventoResponseDTO {
 
-
+    private String id;
     private String nome;
     private String dataInicio;
     private String dataFim;
     private MontanhaResumoDTO montanha;
 
     public EventoResponseDTO (Evento evento){
+        this.id = evento.getId();
         this.nome = evento.getNome();
         this.dataInicio = evento.getDataInicio();
         this.dataFim = evento.getDataFim();
@@ -46,6 +47,15 @@ public class EventoResponseDTO {
     }
     public void setMontanha(MontanhaResumoDTO montanha) {
         this.montanha = montanha;
+    }
+    public String getId() {
+        return id;
+    }
+
+
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 }
